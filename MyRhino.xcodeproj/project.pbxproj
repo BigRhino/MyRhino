@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76B5889B1E685F6400791987 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B5889A1E685F6400791987 /* main.m */; };
+		76B5889E1E685F6400791987 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B5889D1E685F6400791987 /* AppDelegate.m */; };
+		76B588A11E685F6400791987 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B588A01E685F6400791987 /* ViewController.m */; };
+		76B588A41E685F6400791987 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B588A21E685F6400791987 /* Main.storyboard */; };
+		76B588A61E685F6400791987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76B588A51E685F6400791987 /* Assets.xcassets */; };
+		76B588A91E685F6400791987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B588A71E685F6400791987 /* LaunchScreen.storyboard */; };
+		76B588B41E685F6400791987 /* MyRhinoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B588B31E685F6400791987 /* MyRhinoTests.m */; };
+		76B588BF1E685F6400791987 /* MyRhinoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B588BE1E685F6400791987 /* MyRhinoUITests.m */; };
+		76B588D01E685FCD00791987 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B588CF1E685FCD00791987 /* BaseViewController.m */; };
+		76B588D41E6867B300791987 /* NavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B588D31E6867B300791987 /* NavigationTitleView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76B588B01E685F6400791987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76B5888E1E685F6400791987 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76B588951E685F6400791987;
+			remoteInfo = MyRhino;
+		};
+		76B588BB1E685F6400791987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76B5888E1E685F6400791987 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76B588951E685F6400791987;
+			remoteInfo = MyRhino;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		76B588961E685F6400791987 /* MyRhino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRhino.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B5889A1E685F6400791987 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		76B5889C1E685F6400791987 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		76B5889D1E685F6400791987 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		76B5889F1E685F6400791987 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		76B588A01E685F6400791987 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		76B588A31E685F6400791987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76B588A51E685F6400791987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76B588A81E685F6400791987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		76B588AA1E685F6400791987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76B588AF1E685F6400791987 /* MyRhinoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyRhinoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B588B31E685F6400791987 /* MyRhinoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRhinoTests.m; sourceTree = "<group>"; };
+		76B588B51E685F6400791987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76B588BA1E685F6400791987 /* MyRhinoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyRhinoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B588BE1E685F6400791987 /* MyRhinoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyRhinoUITests.m; sourceTree = "<group>"; };
+		76B588C01E685F6400791987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76B588CE1E685FCD00791987 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		76B588CF1E685FCD00791987 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		76B588D21E6867B300791987 /* NavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTitleView.h; sourceTree = "<group>"; };
+		76B588D31E6867B300791987 /* NavigationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTitleView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76B588931E685F6400791987 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76B588AC1E685F6400791987 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76B588B71E685F6400791987 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76B5888D1E685F6400791987 = {
+			isa = PBXGroup;
+			children = (
+				76B588981E685F6400791987 /* MyRhino */,
+				76B588B21E685F6400791987 /* MyRhinoTests */,
+				76B588BD1E685F6400791987 /* MyRhinoUITests */,
+				76B588971E685F6400791987 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76B588971E685F6400791987 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76B588961E685F6400791987 /* MyRhino.app */,
+				76B588AF1E685F6400791987 /* MyRhinoTests.xctest */,
+				76B588BA1E685F6400791987 /* MyRhinoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76B588981E685F6400791987 /* MyRhino */ = {
+			isa = PBXGroup;
+			children = (
+				76B5889C1E685F6400791987 /* AppDelegate.h */,
+				76B5889D1E685F6400791987 /* AppDelegate.m */,
+				76B5889F1E685F6400791987 /* ViewController.h */,
+				76B588A01E685F6400791987 /* ViewController.m */,
+				76B588CC1E685F8F00791987 /* MyRhino */,
+				76B588A21E685F6400791987 /* Main.storyboard */,
+				76B588A51E685F6400791987 /* Assets.xcassets */,
+				76B588A71E685F6400791987 /* LaunchScreen.storyboard */,
+				76B588AA1E685F6400791987 /* Info.plist */,
+				76B588991E685F6400791987 /* Supporting Files */,
+			);
+			path = MyRhino;
+			sourceTree = "<group>";
+		};
+		76B588991E685F6400791987 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				76B5889A1E685F6400791987 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76B588B21E685F6400791987 /* MyRhinoTests */ = {
+			isa = PBXGroup;
+			children = (
+				76B588B31E685F6400791987 /* MyRhinoTests.m */,
+				76B588B51E685F6400791987 /* Info.plist */,
+			);
+			path = MyRhinoTests;
+			sourceTree = "<group>";
+		};
+		76B588BD1E685F6400791987 /* MyRhinoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76B588BE1E685F6400791987 /* MyRhinoUITests.m */,
+				76B588C01E685F6400791987 /* Info.plist */,
+			);
+			path = MyRhinoUITests;
+			sourceTree = "<group>";
+		};
+		76B588CC1E685F8F00791987 /* MyRhino */ = {
+			isa = PBXGroup;
+			children = (
+				76B588CD1E685FA900791987 /* Base */,
+			);
+			path = MyRhino;
+			sourceTree = "<group>";
+		};
+		76B588CD1E685FA900791987 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				76B588CE1E685FCD00791987 /* BaseViewController.h */,
+				76B588CF1E685FCD00791987 /* BaseViewController.m */,
+				76B588D21E6867B300791987 /* NavigationTitleView.h */,
+				76B588D31E6867B300791987 /* NavigationTitleView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76B588951E685F6400791987 /* MyRhino */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76B588C31E685F6400791987 /* Build configuration list for PBXNativeTarget "MyRhino" */;
+			buildPhases = (
+				76B588921E685F6400791987 /* Sources */,
+				76B588931E685F6400791987 /* Frameworks */,
+				76B588941E685F6400791987 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyRhino;
+			productName = MyRhino;
+			productReference = 76B588961E685F6400791987 /* MyRhino.app */;
+			productType = "com.apple.product-type.application";
+		};
+		76B588AE1E685F6400791987 /* MyRhinoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76B588C61E685F6400791987 /* Build configuration list for PBXNativeTarget "MyRhinoTests" */;
+			buildPhases = (
+				76B588AB1E685F6400791987 /* Sources */,
+				76B588AC1E685F6400791987 /* Frameworks */,
+				76B588AD1E685F6400791987 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76B588B11E685F6400791987 /* PBXTargetDependency */,
+			);
+			name = MyRhinoTests;
+			productName = MyRhinoTests;
+			productReference = 76B588AF1E685F6400791987 /* MyRhinoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		76B588B91E685F6400791987 /* MyRhinoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76B588C91E685F6400791987 /* Build configuration list for PBXNativeTarget "MyRhinoUITests" */;
+			buildPhases = (
+				76B588B61E685F6400791987 /* Sources */,
+				76B588B71E685F6400791987 /* Frameworks */,
+				76B588B81E685F6400791987 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76B588BC1E685F6400791987 /* PBXTargetDependency */,
+			);
+			name = MyRhinoUITests;
+			productName = MyRhinoUITests;
+			productReference = 76B588BA1E685F6400791987 /* MyRhinoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76B5888E1E685F6400791987 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Rhino;
+				TargetAttributes = {
+					76B588951E685F6400791987 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					76B588AE1E685F6400791987 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 76B588951E685F6400791987;
+					};
+					76B588B91E685F6400791987 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 76B588951E685F6400791987;
+					};
+				};
+			};
+			buildConfigurationList = 76B588911E685F6400791987 /* Build configuration list for PBXProject "MyRhino" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76B5888D1E685F6400791987;
+			productRefGroup = 76B588971E685F6400791987 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76B588951E685F6400791987 /* MyRhino */,
+				76B588AE1E685F6400791987 /* MyRhinoTests */,
+				76B588B91E685F6400791987 /* MyRhinoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76B588941E685F6400791987 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76B588A91E685F6400791987 /* LaunchScreen.storyboard in Resources */,
+				76B588A61E685F6400791987 /* Assets.xcassets in Resources */,
+				76B588A41E685F6400791987 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76B588AD1E685F6400791987 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76B588B81E685F6400791987 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76B588921E685F6400791987 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76B588D41E6867B300791987 /* NavigationTitleView.m in Sources */,
+				76B588A11E685F6400791987 /* ViewController.m in Sources */,
+				76B588D01E685FCD00791987 /* BaseViewController.m in Sources */,
+				76B5889E1E685F6400791987 /* AppDelegate.m in Sources */,
+				76B5889B1E685F6400791987 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76B588AB1E685F6400791987 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76B588B41E685F6400791987 /* MyRhinoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76B588B61E685F6400791987 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76B588BF1E685F6400791987 /* MyRhinoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76B588B11E685F6400791987 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76B588951E685F6400791987 /* MyRhino */;
+			targetProxy = 76B588B01E685F6400791987 /* PBXContainerItemProxy */;
+		};
+		76B588BC1E685F6400791987 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76B588951E685F6400791987 /* MyRhino */;
+			targetProxy = 76B588BB1E685F6400791987 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		76B588A21E685F6400791987 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76B588A31E685F6400791987 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		76B588A71E685F6400791987 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76B588A81E685F6400791987 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		76B588C11E685F6400791987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76B588C21E685F6400791987 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76B588C41E685F6400791987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyRhino/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kipo.MyRhino;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		76B588C51E685F6400791987 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MyRhino/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kipo.MyRhino;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		76B588C71E685F6400791987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MyRhinoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kipo.MyRhinoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyRhino.app/MyRhino";
+			};
+			name = Debug;
+		};
+		76B588C81E685F6400791987 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MyRhinoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kipo.MyRhinoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyRhino.app/MyRhino";
+			};
+			name = Release;
+		};
+		76B588CA1E685F6400791987 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MyRhinoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kipo.MyRhinoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyRhino;
+			};
+			name = Debug;
+		};
+		76B588CB1E685F6400791987 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MyRhinoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kipo.MyRhinoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MyRhino;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76B588911E685F6400791987 /* Build configuration list for PBXProject "MyRhino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76B588C11E685F6400791987 /* Debug */,
+				76B588C21E685F6400791987 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76B588C31E685F6400791987 /* Build configuration list for PBXNativeTarget "MyRhino" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76B588C41E685F6400791987 /* Debug */,
+				76B588C51E685F6400791987 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76B588C61E685F6400791987 /* Build configuration list for PBXNativeTarget "MyRhinoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76B588C71E685F6400791987 /* Debug */,
+				76B588C81E685F6400791987 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76B588C91E685F6400791987 /* Build configuration list for PBXNativeTarget "MyRhinoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76B588CA1E685F6400791987 /* Debug */,
+				76B588CB1E685F6400791987 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76B5888E1E685F6400791987 /* Project object */;
+}
