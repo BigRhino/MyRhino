@@ -1,0 +1,416 @@
+#iOS数据库简单入门
+###什么是数据库
+言简意赅:字面上的理解,保存数据的仓库.
+维基百科:可视为电子化的文件柜——存储电子文件的处所，用户可以对文件中的数据运行新增、截取、更新、删除等操作.
+类似于EXCEL表格
+
+###常见数据库
+1. Oracle
+2. DB2
+3. SQL Server
+4. Postgre SQL
+5. MySQL
+
+###相关术语
+DBS(Database System):数据库系统 
+- 数据库 DB(Database)
+- 数据库管理系统DBMS(Database Management System)
+- 应用开发工具
+- 管理员及用户
+
+SQL语言(Structured Query Language)结构化查询语言
+
+- DDL (Data Definition Language) 数据库定义语言
+数据定义语言DDL用来创建数据库中的各种对象-----表、视图、
+索引、同义词、聚簇等如：
+CREATE TABLE/VIEW/INDEX/SYN/CLUSTER
+| | | | |
+表 视图 索引 同义词 簇
+主要语句:
+Create语句：可以创建数据库和数据库的一些对象。
+Drop语句：可以删除数据表、索引、触发程序、条件约束以及数据表的权限等。
+Alter语句：修改数据表定义及属性。
+
+- DML（Data Manipulation Language) 数据库操作语言
+数据操纵语言DML主要有三种形式：
+1) 插入：INSERT
+2) 更新：UPDATE
+3) 删除：DELETE
+
+- DQL (Data Query Language)数据库查询语言
+数据查询语言DQL基本结构是由SELECT子句，FROM子句，WHERE
+子句组成的查询块：
+SELECT <字段名表>
+FROM <表或视图名>
+WHERE <查询条件>
+
+- DCL （Data Control Language）数据库控制语言
+数据控制语言DCL用来授予或回收访问数据库的某种特权，并控制
+数据库操纵事务发生的时间及效果，对数据库实行监视等。如：
+1) GRANT：授权。
+2) ROLLBACK [WORK] TO [SAVEPOINT]：回退到某一点。
+回滚---ROLLBACK
+回滚命令使数据库状态回到上次最后提交的状态。其格式为：
+SQL>ROLLBACK;
+3) COMMIT [WORK]：提交。
+
+
+###SQL语句
+创建表
+
+```
+CREATE TABLE IF NOT EXISTS table_Name(ID PRIMARY KEY,);
+```
+
+###sqlite3
+SQLite是一个嵌入式的数据库引擎,专门适用于资源有限的设备(手机,pda等)适量数据存储.即轻量级的数据库,没有服务器进程.其使用的是原生的C函数库.
+
+####特点
+1.所有数据在表单中进行管理,数据没有顺序
+2.SQL语句不区分大小写,字段,表单区分大小写
+3.表单必须有主键,主键唯一,主键不会归零,只增不减
+4.SQLite内部只支持NULL,INTEGER,REAL(浮点数),TEXT(文本),BLOB(大二进制对象),这5种类型,但实际上也完全可以接受VARCHAR(N),CHAR(N),DECIMAL(P,S)等数据类型,只不过SQLite会在运算或保存时将他们转换为上面5种数据类型中相应的类型.
+5.SQLite允许把各种类型的数据保存到任何类型字段只能中,开发者可以不用关心声明该字段所使用的数据类型.例如:可以把字符串类型的值存入INTEGER类型的字段中,也可以把数值型的值存入布尔类型的字段中.但是定义为”INTEGER PRIMARY KEY”即主键,只能存储64位整数,存储除整数以外的其它数据类型时,SQLite会产生错误.
+
+####sqlite3工具
+Mac OS X ++自带sqlite3工具,可以通过终端来执行命令来检查,管理数据库.
+得到数据库路径,在终端执行 sqlite3 路径来启动SQLite数据库
+常用命令:
+- .database:查看当前数据库
+- .tables:查看当前数据库里的数据库表
+- .help查看sqlite3支持的命令
+我们编写代码时可以用来测试SQL语句.
+
+###sqlite3使用
+添加library---libsqlite3.tbd,导入头文件#import "sqlite3.h"
+
+####sqlite3的创建
+步骤如下:
+
+1. 根据路径,调用函数sqlite3_open()打开数据库
+2. 使用sqlite3_exec函数执行Create Table语句
+3. 使用sqlite3_close函数释放资源
+
+声明一个sqlite3 *db变量,获取沙盒创建资源路径,一般放在沙盒路径下的Documents文件夹下.桥接成C语言的字符串,调用sqlite3_open()打开数据库
+
+```
+@interface SQLManage : NSObject{
+    sqlite3 *db;
+}
+//获取路径
+static const char *sqliteResoursePath(){
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [[paths firstObject]stringByAppendingPathComponent:@"xxxx.sqlite"];
+    return documentDirectory.UTF8String;
+}
+    //打开数据库
+    //参数一:数据库文件所在的完整路径, const char *
+    //参数二:数据库句柄 地址 &&sqlite3
+    int status = sqlite3_open(sqliteResoursePath()?:”:memory:", &db);
+    if (status != SQLITE_OK) {
+        //SQLITE_OK 代表打开成功
+        sqlite3_close(db);
+        NSAssert(NO, @"数据库打开失败~");
+    }
+```
+
+建表
+CREATE TABLE [IF NOT EXISTS] 表名(字段名称 字段类型 [完整性约束条件],完整性约束条件], .....)ENGINE=存储引擎 CHARSET=编码方式;
+
+```
+ char *sql = "create table if not exists Student(id integer primary key autoincrement,name varchar(10),age integer,score float default 0.0,sex text,desc text)”;
+```
+
+关于完整性约束条件
+
+| 约束条件 | 含义 |
+| -- | -- |
+| UNSIGNED | 无符号,没有负数,从0开始 |
+| ZEROFILL | 零填充,当数据的显示长度不够的时候,可以使用前补0的效果填充至指定长度,字段会自动添加UNSIGNED |
+| NOT NULL | 非空约束,也就是插入值的时候,这个字段必须要给值,值不能为空 |
+| DEFAULT | 默认值.如果插入记录的时候没有给字段赋值,则使用默认值|
+| PRIMARY KEY | 主键,标识记录的唯一性,值不能重复,一个表只能有一个主键,自动禁止为空 |
+| AUTO_INCREMENT | 自动增长,只能用于数值列,而且配合索引使用,默认起始值从1开始,每次增长1 |
+| UNIQUE KEY | 唯一性,一个表中可以有多个字段是唯一索引,同样的值不能重复,但是NULL值除外 |
+| FOREIGN KEY | 外键约束  |
+
+```
+        char *error;
+//数据库语句
+        char *sql = "create table if not exists user(id integer primary key autoincrement,name text,desc text)";
+        //执行SQL语句
+        //参数一: 数据库对象
+        //参数二: 数据库语句
+        //参数三: 回调函数
+        //参数四: 回调函数的引用(传递参数)
+        //参数五: 错误信息
+       int execStatus = sqlite3_exec(db, sql, NULL, NULL, &error);
+        if (execStatus != SQLITE_OK) {
+            NSLog(@"execSql failed:%s",error);
+            NSAssert(NO, @"create table falied”);
+        }else{
+            NSLog(@"exec sql success!");
+        }
+        //关闭数据库
+         sqlite3_close(db);
+
+```
+
+###添加数据
+1. sqlite3_open()打开数据库
+2. 使用sqlite3_prepare_v2函数预处理SQL语句
+3. 使用sqlite3_bind_text|int..(类型)函数绑定参数
+4. 使用sqlite3_step函数执行SQL语句,遍历结果集合.
+
+```
+- (void)insert:(NSString *)name desc:(NSString *)desc{
+    
+    char *insertSQL = "insert into user values(null,?,?)";
+    
+    sqlite3_stmt *stmt;
+    
+    int result = sqlite3_prepare_v2(db, insertSQL, -1, &stmt, NULL);
+    
+    //预编译成功
+    if (result == SQLITE_OK) {
+        //为第一个?绑定参数
+        sqlite3_bind_text(stmt, 1, name.UTF8String, -1, NULL);
+        //为第二个?绑定参数
+        sqlite3_bind_text(stmt, 2, desc.UTF8String, -1, NULL);
+        
+        //执行SQL语句
+        result = sqlite3_step(stmt);
+        if (result == SQLITE_DONE) {
+            NSLog(@"插入成功~");
+        }
+        sqlite3_finalize(stmt);
+    }
+    //关闭数据库
+    sqlite3_close(db);
+}
+
+```
+
+###删除表
+
+` drop table 表名  `
+
+
+```
+- (void)dropTable{
+    
+    char *drop = "drop table user";
+    char *error;
+    int result = sqlite3_exec(db, drop, NULL, NULL, &error);
+    if (result != SQLITE_OK) {
+        if (error) {
+            NSLog(@"drop table failed,error:%s",error);
+        }
+    }else{
+        NSLog(@"drop table success!");
+    }
+}
+
+```
+
+###删除记录
+
+delete from 表名 where ID = 2;
+delete from 表名;   ——表单内容全部删除（表单还在）
+
+模糊删除
+delete from 表名 where name like '%枫%';
+delete from 表名 where name = ‘小明’;
+delete from 表名 where name = ‘小明’ and age = ’20’;	
+delete from 表名 where name = ‘小明’ and ID > 5;
+
+
+###更新记录
+
+update 表名 set name = ‘小明’ where ID = 1;
+update 表名 set name = ‘小明’, age = ’20’ where ID = 1; 
+
+###使用sqlite进行数据查找操作
+
+select:
+select * from 表名; 查询所有数据
+select name from 表名;
+select name, age from 表名;
+
+where:
+select * from 表名 where name like '%舒%';
+select * from 表名 where name like '%舒%' and ID == 1;
+select * from 表名 where name like '%舒%' and ID < 2;
+
+select:
+select count(*) from 表名
+select sum(ID) from 表名
+select avg(ID) from 表名
+
+
+#####运算符
+
+= 或 == 或 like 等于
+> 大于
+< 小于
+>= 大于等于
+<= 小于等于
+<> 不等于
+!> 不大于
+!< 不小于
+%小明% 包含子字符串”小明”  只用于like
+
+
+1. sqlite3_open()打开数据库
+2. 使用sqlite3_prepare_v2函数预处理SQL语句
+3. 使用sqlite3_bind_text|int..(类型)函数绑定参数
+4. 使用sqlite3_step函数执行SQL语句,遍历结果集合.
+5. 使用sqlite3_column_text|int..(类型)等函数提取字段数据
+
+```
+//查询
+- (void)queryKey:(NSString *)key{
+    
+    //sqlite3_exec()一般执行无须返回值的语句 DDL DML
+    //如果需要执行查询语句,则先调用sqlite3_prepare_v2预处理查询语句,然后循环调用sqlite3_step()取出查询结果集.
+    char *querySQL = "SELECT * FROM user where name like ?";
+    
+    sqlite3_stmt *statement;
+    
+    //v2代表新版本
+    //预编译SQL语句,sqlite3_stmt保存了预编译结果的引用
+   int result =  sqlite3_prepare_v2(db, querySQL, -1, &statement, nil);
+    //预编译成功
+    if (result == SQLITE_OK) {
+        
+        //%代表通配符
+        NSString *keys = [NSString stringWithFormat:@"%%%@%%",key];
+        sqlite3_bind_text(statement, 1, keys.UTF8String, -1, NULL);
+        
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            int idKey = sqlite3_column_int(statement, 0);
+            const unsigned char *name = sqlite3_column_text(statement, 1);
+            const unsigned char *desc = sqlite3_column_text(statement, 2);
+            NSLog(@"%d,%s,%s",idKey,name,desc);
+        }
+    }
+    
+}
+
+```
+
+###FMDB的使用
+
+单例类
+
+```
+#import "DBManage.h"
+#import "FMDatabase.h"
+#import "FMResultSet.h"
+@implementation DBManage{
+    FMDatabase *_dataBase;
+}
+
++ (id)defaultDBManager{
+    static DBManage *manager = nil;
+    if (manager == nil) {
+        manager = [[DBManage alloc]init];
+    }
+    return manager;
+}
+/*
+ 对于Model而言，重写init方法目的在于，创建容器，创建对应的对象，调用成员方法之前的准备的工作
+ 对于View而言，重写init方法目的在于 添加控件，达到自定制页面的目的
+ */
+- (id)init{
+    if (self = [super init]) {
+        [self createDB];
+    }
+    return self;
+}
+```
+
+####建表
+
+```
+- (void)createDB{
+    
+    NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/DB"];
+    NSLog(@"%@",dbPath);
+    if (_dataBase == nil) {
+        _dataBase = [FMDatabase databaseWithPath:dbPath];
+    }
+    //操作数据库之前，一定要打开数据库，要不然所有的操作都无法执行
+    [_dataBase open];
+    
+    [self createTable];
+}
+- (void)createTable{
+
+    NSString *sql = @"create table if not exists Contact(ID integer primary key autoincrement,name varchar(128),remark text,tel text,email varchar(200),head text);";
+   
+    [_dataBase executeUpdate:sql];
+}
+```
+
+####添加数据
+
+```
+- (void)addUser:(ContactModel *)user{
+  
+    NSString *sql = @"insert into Contact(name,head,email,tel,remark) values(?,?,?,?,?);";
+    [_dataBase executeUpdate:sql,user.name,user.head,user.email,user.tel,user.remark];
+}
+```
+
+####删除数据
+
+```
+- (void)deleteUser:(ContactModel *)user{
+    //根据电话号码删除记录
+    NSString *sql =@"delete from Contact where tel=?;";
+    [_dataBase executeUpdate:sql,user.tel];
+}
+```
+
+####更新数据
+
+```
+- (void)updateUser:(ContactModel *)user toUser:(ContactModel *)newUser{
+    
+    //1.找到对应的用户；
+    NSString *sql = @"select ID from Contact where tel = ?;";
+    FMResultSet *resultSet = [_dataBase executeQuery:sql,user.tel];
+    NSString *ID = nil;
+    if (resultSet.next) {
+        ID =[resultSet stringForColumn:@"ID"];
+    }
+    //2.修改
+    if (ID) {
+        NSString *sql =@"update Contact set tel=?,name=?,email=?,head=?,remark=? where ID = ?;";
+        [_dataBase executeUpdate:sql,newUser.tel,newUser.name,newUser.email,newUser.head,newUser.remark,ID];
+    }
+}
+
+```
+
+####获取所有数据
+
+```
+- (NSArray *)searchAllUsers{
+    NSMutableArray *array = [NSMutableArray array];
+    NSString *sql = @"select * from Contact;";
+    FMResultSet *set = [_dataBase executeQuery:sql];
+    while (set.next) {
+        ContactModel *user = [[ContactModel alloc]init];
+       user.name = [set stringForColumn:@"name"];
+        user.tel = [set stringForColumn:@"tel"];
+        user.email  = [set stringForColumn:@"email"];
+       user.head = [set stringForColumn:@"head"];
+        user.remark = [set stringForColumn:@"remark"];
+       
+        [array addObject:user];
+    }
+    return array;
+}
+```
