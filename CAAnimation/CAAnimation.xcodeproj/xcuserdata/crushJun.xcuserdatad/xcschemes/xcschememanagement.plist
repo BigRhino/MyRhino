@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>HeaderNote.xcscheme</key>
+		<key>CAAnimation.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>768CDEDE1F1DA0CA00ED3F59</key>
+		<key>763D53F91F18B33300B37DEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>768CDEF61F1DA0CA00ED3F59</key>
+		<key>763D54111F18B33300B37DEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>768CDF011F1DA0CA00ED3F59</key>
+		<key>763D541C1F18B33300B37DEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 /**
- 标签/分栏控制器 是一个容器类,管理一个并列关系的视图控制器数组.有一个Tabbar用来切换视图
+ 标签/分栏控制器 是一个容器类,管理一个并列关系的控制器数组.有一个Tabbar用来切换视图
  当子视图控制器的个数大于5时,会造成tabbar中的按钮拥挤,所以会将第五个控制器交由系统自己创建即即属性:moreNavigationController,moreNavigationController是一个导航控制器,管理剩余的子视图控制器列表,我们可以通过属性customizableViewControllers获取.同样也可以通过代理方法重新排列视图控制器的顺序
  需要注意的是:
  1.moreNavigationController的下标不是4,而是一个最大的正整数

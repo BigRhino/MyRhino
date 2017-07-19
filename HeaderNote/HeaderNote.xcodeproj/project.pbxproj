@@ -54,6 +54,14 @@
 		768CDF151F1DA0FE00ED3F59 /* UITabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITabBarItem.h; sourceTree = "<group>"; };
 		768CDF161F1DCE0B00ED3F59 /* UITabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITabBarController.h; sourceTree = "<group>"; };
 		768CDF171F1DD9B700ED3F59 /* UITabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITabBar.h; sourceTree = "<group>"; };
+		76A4DE611F1F99AA0006B4CA /* UIInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIInterface.h; sourceTree = "<group>"; };
+		76A4DE631F1FA4D70006B4CA /* NSFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSFileManager.h; sourceTree = "<group>"; };
+		76A4DE641F1FAD790006B4CA /* NSString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSString.h; sourceTree = "<group>"; };
+		76DBC76C1F1DF72800AA820B /* UINavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UINavigationController.h; sourceTree = "<group>"; };
+		76DBC76D1F1DF84B00AA820B /* UINavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UINavigationBar.h; sourceTree = "<group>"; };
+		76DBC76E1F1DF86200AA820B /* UIBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBarButtonItem.h; sourceTree = "<group>"; };
+		76DBC76F1F1DF87F00AA820B /* UIToolbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIToolbar.h; sourceTree = "<group>"; };
+		76DBC7701F1E068400AA820B /* UINavigationItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UINavigationItem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 			children = (
 				768CDEE21F1DA0CA00ED3F59 /* AppDelegate.h */,
 				768CDEE31F1DA0CA00ED3F59 /* AppDelegate.m */,
+				76A4DE621F1FA4BA0006B4CA /* Foundation */,
 				768CDF141F1DA0E600ED3F59 /* UIKit */,
 				768CDEE51F1DA0CA00ED3F59 /* ViewController.h */,
 				768CDEE61F1DA0CA00ED3F59 /* ViewController.m */,
@@ -142,8 +151,23 @@
 				768CDF151F1DA0FE00ED3F59 /* UITabBarItem.h */,
 				768CDF161F1DCE0B00ED3F59 /* UITabBarController.h */,
 				768CDF171F1DD9B700ED3F59 /* UITabBar.h */,
+				76DBC76C1F1DF72800AA820B /* UINavigationController.h */,
+				76DBC76D1F1DF84B00AA820B /* UINavigationBar.h */,
+				76DBC76E1F1DF86200AA820B /* UIBarButtonItem.h */,
+				76DBC7701F1E068400AA820B /* UINavigationItem.h */,
+				76DBC76F1F1DF87F00AA820B /* UIToolbar.h */,
+				76A4DE611F1F99AA0006B4CA /* UIInterface.h */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		76A4DE621F1FA4BA0006B4CA /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				76A4DE631F1FA4D70006B4CA /* NSFileManager.h */,
+				76A4DE641F1FAD790006B4CA /* NSString.h */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +550,7 @@
 				768CDF0D1F1DA0CA00ED3F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768CDF0E1F1DA0CA00ED3F59 /* Build configuration list for PBXNativeTarget "HeaderNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +559,7 @@
 				768CDF101F1DA0CA00ED3F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		768CDF111F1DA0CA00ED3F59 /* Build configuration list for PBXNativeTarget "HeaderNoteUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +568,7 @@
 				768CDF131F1DA0CA00ED3F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
