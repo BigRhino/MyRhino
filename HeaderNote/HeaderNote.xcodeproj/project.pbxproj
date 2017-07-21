@@ -35,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		764671831F21F68B00C89648 /* UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
+		764671841F220BD600C89648 /* NSThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThread.h; sourceTree = "<group>"; };
+		764671851F2246C000C89648 /* NSLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLock.h; sourceTree = "<group>"; };
+		764671861F224E9B00C89648 /* UIApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIApplication.h; sourceTree = "<group>"; };
+		764671871F22514E00C89648 /* NSOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperation.h; sourceTree = "<group>"; };
+		764671891F225C8300C89648 /* UIResponder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIResponder.h; sourceTree = "<group>"; };
 		768CDEDF1F1DA0CA00ED3F59 /* HeaderNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeaderNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		768CDEE21F1DA0CA00ED3F59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		768CDEE31F1DA0CA00ED3F59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -157,6 +163,9 @@
 				76DBC7701F1E068400AA820B /* UINavigationItem.h */,
 				76DBC76F1F1DF87F00AA820B /* UIToolbar.h */,
 				76A4DE611F1F99AA0006B4CA /* UIInterface.h */,
+				764671831F21F68B00C89648 /* UIView.h */,
+				764671861F224E9B00C89648 /* UIApplication.h */,
+				764671891F225C8300C89648 /* UIResponder.h */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -166,6 +175,9 @@
 			children = (
 				76A4DE631F1FA4D70006B4CA /* NSFileManager.h */,
 				76A4DE641F1FAD790006B4CA /* NSString.h */,
+				764671841F220BD600C89648 /* NSThread.h */,
+				764671851F2246C000C89648 /* NSLock.h */,
+				764671871F22514E00C89648 /* NSOperation.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
