@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7601B54F1F243AE200B3CAE6 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7601B54E1F243AE200B3CAE6 /* SearchViewController.m */; };
+		7645C53E1F26208D000D83B8 /* SegementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7645C53D1F26208D000D83B8 /* SegementViewController.m */; };
 		768CDEE41F1DA0CA00ED3F59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 768CDEE31F1DA0CA00ED3F59 /* AppDelegate.m */; };
 		768CDEE71F1DA0CA00ED3F59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 768CDEE61F1DA0CA00ED3F59 /* ViewController.m */; };
 		768CDEEA1F1DA0CA00ED3F59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768CDEE81F1DA0CA00ED3F59 /* Main.storyboard */; };
@@ -35,6 +37,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7601B5431F22FD9900B3CAE6 /* UILable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILable.h; sourceTree = "<group>"; };
+		7601B5441F22FE8700B3CAE6 /* UIColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIColor.h; sourceTree = "<group>"; };
+		7601B5451F22FF8500B3CAE6 /* NSParagraphStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSParagraphStyle.h; sourceTree = "<group>"; };
+		7601B5461F23006F00B3CAE6 /* UIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButton.h; sourceTree = "<group>"; };
+		7601B5471F23008E00B3CAE6 /* UIImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageView.h; sourceTree = "<group>"; };
+		7601B5481F23009400B3CAE6 /* UIImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImage.h; sourceTree = "<group>"; };
+		7601B5491F2300A300B3CAE6 /* UISlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UISlider.h; sourceTree = "<group>"; };
+		7601B54B1F23020400B3CAE6 /* UIControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIControl.h; sourceTree = "<group>"; };
+		7601B54C1F23041100B3CAE6 /* UISearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UISearchBar.h; sourceTree = "<group>"; };
+		7601B54D1F243AE200B3CAE6 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		7601B54E1F243AE200B3CAE6 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		7645C53B1F261BC6000D83B8 /* UISegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UISegmentedControl.h; sourceTree = "<group>"; };
+		7645C53C1F26208D000D83B8 /* SegementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegementViewController.h; sourceTree = "<group>"; };
+		7645C53D1F26208D000D83B8 /* SegementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SegementViewController.m; sourceTree = "<group>"; };
 		764671831F21F68B00C89648 /* UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIView.h; sourceTree = "<group>"; };
 		764671841F220BD600C89648 /* NSThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThread.h; sourceTree = "<group>"; };
 		764671851F2246C000C89648 /* NSLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLock.h; sourceTree = "<group>"; };
@@ -124,6 +140,10 @@
 				768CDF141F1DA0E600ED3F59 /* UIKit */,
 				768CDEE51F1DA0CA00ED3F59 /* ViewController.h */,
 				768CDEE61F1DA0CA00ED3F59 /* ViewController.m */,
+				7601B54D1F243AE200B3CAE6 /* SearchViewController.h */,
+				7601B54E1F243AE200B3CAE6 /* SearchViewController.m */,
+				7645C53C1F26208D000D83B8 /* SegementViewController.h */,
+				7645C53D1F26208D000D83B8 /* SegementViewController.m */,
 				768CDEE81F1DA0CA00ED3F59 /* Main.storyboard */,
 				768CDEEB1F1DA0CA00ED3F59 /* Assets.xcassets */,
 				768CDEED1F1DA0CA00ED3F59 /* LaunchScreen.storyboard */,
@@ -166,6 +186,15 @@
 				764671831F21F68B00C89648 /* UIView.h */,
 				764671861F224E9B00C89648 /* UIApplication.h */,
 				764671891F225C8300C89648 /* UIResponder.h */,
+				7601B5431F22FD9900B3CAE6 /* UILable.h */,
+				7601B5461F23006F00B3CAE6 /* UIButton.h */,
+				7601B54B1F23020400B3CAE6 /* UIControl.h */,
+				7601B5471F23008E00B3CAE6 /* UIImageView.h */,
+				7601B54C1F23041100B3CAE6 /* UISearchBar.h */,
+				7601B5481F23009400B3CAE6 /* UIImage.h */,
+				7601B5491F2300A300B3CAE6 /* UISlider.h */,
+				7601B5441F22FE8700B3CAE6 /* UIColor.h */,
+				7645C53B1F261BC6000D83B8 /* UISegmentedControl.h */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -178,6 +207,7 @@
 				764671841F220BD600C89648 /* NSThread.h */,
 				764671851F2246C000C89648 /* NSLock.h */,
 				764671871F22514E00C89648 /* NSOperation.h */,
+				7601B5451F22FF8500B3CAE6 /* NSParagraphStyle.h */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -314,7 +344,9 @@
 			files = (
 				768CDEE71F1DA0CA00ED3F59 /* ViewController.m in Sources */,
 				768CDEF21F1DA0CA00ED3F59 /* main.m in Sources */,
+				7601B54F1F243AE200B3CAE6 /* SearchViewController.m in Sources */,
 				768CDEE41F1DA0CA00ED3F59 /* AppDelegate.m in Sources */,
+				7645C53E1F26208D000D83B8 /* SegementViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
