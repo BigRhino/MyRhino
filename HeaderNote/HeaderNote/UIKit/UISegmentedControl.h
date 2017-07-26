@@ -42,6 +42,8 @@ typedef NS_ENUM(NSInteger, UISegmentedControlSegment) {
 
 @class UIImage, UIColor;
 
+//分段选择
+
 NS_CLASS_AVAILABLE_IOS(2_0) @interface UISegmentedControl : UIControl <NSCoding>
 
 ///构造函数,传入一个字符串数组或者UIImages.自动根据内容适应尺寸
@@ -49,9 +51,10 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UISegmentedControl : UIControl <NSCoding>
 //样式  失效_没有任何效果
 @property(nonatomic) UISegmentedControlStyle segmentedControlStyle NS_DEPRECATED_IOS(2_0, 7_0, "The segmentedControlStyle property no longer has any effect") __TVOS_PROHIBITED;
 
-//默认NO 决定了其"切换"功能的本质,用户点击某个模块按钮时,按钮会保持选中状态,设置为YES,当用户手指离开屏幕,按钮的选中状态会消失.
+//默认NO 是否保持高亮状态默认保持 如果设置为YES当用户点击分段控件的某个分段时,该控件只在用户点击时高亮显示,点击结束,不会继续高亮显示点击的那个分段
 @property(nonatomic,getter=isMomentary) BOOL momentary;             // if set, then we don't keep showing selected state after tracking ends. default is NO
-//内容(按钮)个数
+
+//内容(按钮)个数 段数
 @property(nonatomic,readonly) NSUInteger numberOfSegments;
 
 // For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on their content widths. Default is NO.

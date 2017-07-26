@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "CGTranslateView.h"
+
 
 @interface ViewController ()
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];    
 
+    CGTranslateView *ts = [[CGTranslateView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:ts];
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 

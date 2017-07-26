@@ -18,7 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class UIImageView, UIImage;
 
-//滑块 进度条
+//拖动条
+/*?
+ 和进度条十分相似,只不过进度条采用颜色填充来标明进度完成的程度,而拖动条则通过滑块的位置来标识数值.而且拖动条允许用户拖动滑块来改变
+ 值.常用语系统的某种数值进行调节,比如调节音量,控制播放进度等.
+ ?*/
+
 NS_CLASS_AVAILABLE_IOS(2_0) __TVOS_PROHIBITED @interface UISlider : UIControl <NSCoding>
 
 //当前值 0 ---- 1.0
@@ -36,9 +41,9 @@ NS_CLASS_AVAILABLE_IOS(2_0) __TVOS_PROHIBITED @interface UISlider : UIControl <N
 //*/***** 默认YES 滑动滑块会连续调用触发方法,设置为NO 则只会拖动结束后调用一次
 @property(nonatomic,getter=isContinuous) BOOL continuous;        // if set, value change events are generated any time the value changes due to dragging. default = YES
 
-//滑块左边部分的颜色
+//设置拖动条已完成进度的轨道颜色
 @property(nullable, nonatomic,strong) UIColor *minimumTrackTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
-//滑块右边部分的颜色
+//设置拖动条未完成进度的轨道颜色
 @property(nullable, nonatomic,strong) UIColor *maximumTrackTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
 //滑块的颜色
 @property(nullable, nonatomic,strong) UIColor *thumbTintColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
@@ -51,9 +56,9 @@ NS_CLASS_AVAILABLE_IOS(2_0) __TVOS_PROHIBITED @interface UISlider : UIControl <N
 
 //设置滑块的图片
 - (void)setThumbImage:(nullable UIImage *)image forState:(UIControlState)state;
-//设置滑块左边的图片
+//设置拖动条已完成进度的轨道图片 结合[UIImage resizableImage]方法 拉伸进行全方位的定制
 - (void)setMinimumTrackImage:(nullable UIImage *)image forState:(UIControlState)state;
-//设置滑块右边的图片
+//设置拖动条未完成进度的轨道图片
 - (void)setMaximumTrackImage:(nullable UIImage *)image forState:(UIControlState)state;
 
 //获取相关图片

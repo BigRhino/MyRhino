@@ -45,7 +45,9 @@ typedef NS_ENUM(NSInteger, UIImageOrientation) {
  is visually indistinguishable from UIImageResizingModeStretch.
  */
 typedef NS_ENUM(NSInteger, UIImageResizingMode) {
+    //平铺
     UIImageResizingModeTile,
+    //拉伸
     UIImageResizingModeStretch,
 };
 
@@ -58,23 +60,34 @@ typedef NS_ENUM(NSInteger, UIImageRenderingMode) {
     UIImageRenderingModeAlwaysTemplate,     // Always draw the image as a template image, ignoring its color information
 } NS_ENUM_AVAILABLE_IOS(7_0);
 
+
+//加载显示各种格式的位图,可以同时加载图片,并依次播放多张图片形成动画.但不能对图片进行缩放,旋转,截取指定区域内容(GCImageRef)
+
 NS_CLASS_AVAILABLE_IOS(2_0) @interface UIImage : NSObject <NSSecureCoding>
 
+//(从应用资源包)加载指定文件名对应的图片  有缓存机制,所以加载常用的,较小的图片
 + (nullable UIImage *)imageNamed:(NSString *)name;      // load from main bundle
 #if __has_include(<UIKit/UITraitCollection.h>)
 + (nullable UIImage *)imageNamed:(NSString *)name inBundle:(nullable NSBundle *)bundle compatibleWithTraitCollection:(nullable UITraitCollection *)traitCollection NS_AVAILABLE_IOS(8_0);
 #endif
 
+//(本地路径)加载指定文件路径对应的图片
 + (nullable UIImage *)imageWithContentsOfFile:(NSString *)path;
+//NSData - >UIImage(加载网络或者本地)
 + (nullable UIImage *)imageWithData:(NSData *)data;
+//按照屏幕比例(缩放因子)
 + (nullable UIImage *)imageWithData:(NSData *)data scale:(CGFloat)scale NS_AVAILABLE_IOS(6_0);
+//CGImageRef -> UIImage
 + (UIImage *)imageWithCGImage:(CGImageRef)cgImage;
+//参数2:比例 参数3:方向(执行旋转\镜像等)
 + (UIImage *)imageWithCGImage:(CGImageRef)cgImage scale:(CGFloat)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(4_0);
+//CoreImage CIImage -> UIImage
 #if __has_include(<CoreImage/CoreImage.h>)
 + (UIImage *)imageWithCIImage:(CIImage *)ciImage NS_AVAILABLE_IOS(5_0);
 + (UIImage *)imageWithCIImage:(CIImage *)ciImage scale:(CGFloat)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(6_0);
 #endif
 
+//对应的实例方法
 - (nullable instancetype)initWithContentsOfFile:(NSString *)path;
 - (nullable instancetype)initWithData:(NSData *)data;
 - (nullable instancetype)initWithData:(NSData *)data scale:(CGFloat)scale NS_AVAILABLE_IOS(6_0);
@@ -85,34 +98,49 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface UIImage : NSObject <NSSecureCoding>
 - (instancetype)initWithCIImage:(CIImage *)ciImage scale:(CGFloat)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(6_0);
 #endif
 
+//图片的尺寸
 @property(nonatomic,readonly) CGSize size; // reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in pixels
 @property(nullable, nonatomic,readonly) CGImageRef CGImage; // returns underlying CGImageRef or nil if CIImage based
 - (nullable CGImageRef)CGImage NS_RETURNS_INNER_POINTER CF_RETURNS_NOT_RETAINED;
 #if __has_include(<CoreImage/CoreImage.h>)
 @property(nullable,nonatomic,readonly) CIImage *CIImage NS_AVAILABLE_IOS(5_0); // returns underlying CIImage or nil if CGImageRef based
 #endif
+//方向
 @property(nonatomic,readonly) UIImageOrientation imageOrientation; // this will affect how the image is composited
+//比例
 @property(nonatomic,readonly) CGFloat scale NS_AVAILABLE_IOS(4_0);
 
 // animated images. When set as UIImageView.image, animation will play in an infinite loop until removed. Drawing will render the first image
 
+#pragma mark - 动画效果-----
+//根据指定的图片名来加载系列图片
+//比如传入mat,会自动加载mat0,mat1...
 + (nullable UIImage *)animatedImageNamed:(NSString *)name duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0);  // read sequence of files with suffix starting at 0 or 1
 + (nullable UIImage *)animatedResizableImageNamed:(NSString *)name capInsets:(UIEdgeInsets)capInsets duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0); // sequence of files
 + (nullable UIImage *)animatedResizableImageNamed:(NSString *)name capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(6_0);
+//传入UIImage数组,动画显示
 + (nullable UIImage *)animatedImageWithImages:(NSArray<UIImage *> *)images duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0);
 
+//图片数组
 @property(nullable, nonatomic,readonly) NSArray<UIImage *> *images   NS_AVAILABLE_IOS(5_0); // default is nil for non-animated images
+//持续时间
 @property(nonatomic,readonly) NSTimeInterval duration NS_AVAILABLE_IOS(5_0); // total duration for all frames. default is 0 for non-animated images
 
-// the these draw the image 'right side up' in the usual coordinate system with 'point' being the top-left.
 
+#pragma mark - 绘制----
+// the these draw the image 'right side up' in the usual coordinate system with 'point' being the top-left.
+//将图片本身绘制到当前绘图CGContextRef的指定点
 - (void)drawAtPoint:(CGPoint)point;                                                        // mode = kCGBlendModeNormal, alpha = 1.0
+//绘制到指定点 混合模式 透明度
 - (void)drawAtPoint:(CGPoint)point blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha;
+
+//绘制到指定区域 混合模式.透明度
 - (void)drawInRect:(CGRect)rect;                                                           // mode = kCGBlendModeNormal, alpha = 1.0
 - (void)drawInRect:(CGRect)rect blendMode:(CGBlendMode)blendMode alpha:(CGFloat)alpha;
 
 - (void)drawAsPatternInRect:(CGRect)rect; // draws the image as a CGPattern
 
+//创建可拉伸图片
 - (UIImage *)resizableImageWithCapInsets:(UIEdgeInsets)capInsets NS_AVAILABLE_IOS(5_0); // create a resizable version of this image. the interior is tiled when drawn.
 - (UIImage *)resizableImageWithCapInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode NS_AVAILABLE_IOS(6_0); // the interior is resized according to the resizingMode
 
