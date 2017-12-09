@@ -24,6 +24,7 @@
 
 @property(nonatomic, strong) RACCommand *command;
 
+
 @end
 
 
@@ -44,6 +45,8 @@
     if (!_command) {
         _command = [[RACCommand alloc]initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
           
+            NSLog(@"11");
+            
             RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                 
                 [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:YES];
@@ -61,8 +64,8 @@
                     }
                     
                     [subscriber sendNext:mutable];
-                  //  [subscriber sendCompleted];
-                    
+                   // [subscriber sendCompleted];
+                    [subscriber sendError:nil];
                     [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:NO];
                 });
                 
@@ -83,6 +86,8 @@
 @property(nonatomic, strong) LoginViewModel *viewModel;
 @property(nonatomic, strong) NSMutableArray *datasource;
 @property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) RACSignal *signal;
+@property(nonatomic, strong) RACCommand *command;
 
 @end
 
@@ -91,19 +96,99 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    [self.view addSubview:self.tableView];
+ //   [self.view addSubview:self.tableView];
+#pragma mark - 方法1
+   // RACSignal *signal= [self.viewModel.command execute:@"参数!!!!!!"];
+//    [signal subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//        [self.datasource addObjectsFromArray:x];
+//        [self.tableView reloadData];
+//    } error:^(NSError * _Nullable error) {
+//        NSLog(@"网络失败~");
+//    } completed:^{
+//        NSLog(@"请求完成~");
+//    }];
     
-    RACSignal *signal= [self.viewModel.command execute:@"参数!!!!!!"];
-    [signal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@",x);
-        [self.datasource addObjectsFromArray:x];
-        [self.tableView reloadData];
-    } error:^(NSError * _Nullable error) {
-        NSLog(@"网络失败~");
-    } completed:^{
-        NSLog(@"请求完成~");
+    
+#pragma mark - 方法2
+    //1.executionSignals是信号中的信号
+    
+//    [self.viewModel.command.executionSignals subscribeNext:^(id  _Nullable x) {
+//
+//        //当执行command的时候会执行这个block,对信号进行订阅
+//        NSLog(@"22%@",x);
+//        [x subscribeNext:^(id  _Nullable x) {
+//
+//            //信号发出再调用这里
+//            NSLog(@"%@",x);
+//            [self.datasource addObjectsFromArray:x];
+//            [self.tableView reloadData];
+//        }];
+//        [x subscribeError:^(NSError * _Nullable error) {
+//            NSLog(@"网络失败~");
+//        }];
+//        [x subscribeCompleted:^{
+//            NSLog(@"请求完成~");
+//        }];
+//
+//    }];
+//
+//    [self.viewModel.command execute:nil];
+    
+#pragma mark - 方法3
+    //1.是订阅不到error和complete的
+    //2.先订阅后执行.
+    //3.switchToLatest把其转换为信号
+//    [self.viewModel.command.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//        [self.datasource addObjectsFromArray:x];
+//        [self.tableView reloadData];
+//    } error:^(NSError * _Nullable error) {
+//        NSLog(@"网络失败~");
+//    } completed:^{
+//        NSLog(@"请求完成~");
+//    }];
+//
+//    [self.viewModel.command execute:nil];
+   
+#pragma mark - 方法4 订阅error
+//    [self.viewModel.command.errors subscribeNext:^(NSError * _Nullable x) {
+//        NSLog(@"error:%@",x);
+//    }];
+//
+//    [self.viewModel.command execute:nil];
+ 
+    [self test2];
+    
+}
+
+- (void)test2{
+    
+    RACCommand *command = [[RACCommand alloc]initWithEnabled:self.signal signalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            
+            [subscriber sendNext:@"12222"];
+            [subscriber sendCompleted];
+            
+            return [RACDisposable disposableWithBlock:^{
+                NSLog(@"结束订阅~");
+            }];
+        }];
     }];
+    self.command = command;
     
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [[self.command execute:nil]subscribeNext:^(id  _Nullable x) {
+        NSLog(@"next~");
+    } error:^(NSError * _Nullable error) {
+        NSLog(@"error~");
+    } completed:^{
+        NSLog(@"complete~");
+    }];
 }
 
 #pragma mark - delegate
@@ -120,6 +205,21 @@
 }
 
 #pragma mark - setter/getter
+- (RACSignal *)signal{
+    if (!_signal) {
+        _signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//            [subscriber sendNext:@(NO)]; -->>>>error
+//            [subscriber sendError:nil];-->>>>>error
+//            [subscriber sendCompleted];-->ok
+            //必须是NSNumber
+            //Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: '-and must only be used on a signal of RACTuples of NSNumbers. Instead, tuple contains a non-NSNumber value: <RACTuple: 0x1c40138f0> ("<null>",1)'
+            [subscriber sendNext:@(0)];
+            return nil;
+        }];
+    }
+    return _signal;
+}
+
 
 - (LoginViewModel *)viewModel{
     if (!_viewModel) {

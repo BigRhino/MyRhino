@@ -50,12 +50,15 @@
 
 - (NSArray *)viewControllers{
     if(_viewControllers == nil){
-        _viewControllers = @[@"RACDefineViewController",
-                             @"RACBindViewController",
-                             @"RACSignalViewController",
+        _viewControllers = @[@"RACSignalViewController",
                              @"RACSubjectViewController",
                              @"RACCommandViewController",
                              @"RACSequenceViewController",
+                             @"RACDefineViewController",
+                             @"RACBindViewController",
+                             @"RACMapViewController",
+                             @"RACIgnoreViewController",
+                             @"RACConcatViewController",
                              @"RACMulticastConnectionVC",
                              @"NetWorkViewController"
                              ];
@@ -64,12 +67,15 @@
 }
 - (NSArray *)titles{
     if (_titles == nil) {
-        _titles = @[@"常用宏",
-                    @"Bind",
-                    @"Signal",
+        _titles = @[@"Signal",
                     @"Subject",
                     @"Command",
                     @"Sequence",
+                    @"常用宏",
+                    @"Bind",
+                    @"映射",
+                    @"过滤",
+                    @"组合",
                     @"RACMulticastConnectionVC",
                     @"网络请求"
                     ];

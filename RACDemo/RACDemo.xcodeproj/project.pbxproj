@@ -24,6 +24,10 @@
 		88996F091FC67DC3001A39CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88996F081FC67DC3001A39CC /* main.m */; };
 		88E03D851FC6BF2D0030DF49 /* RACDefineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E03D841FC6BF2D0030DF49 /* RACDefineViewController.m */; };
 		88E03D881FC6C8220030DF49 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E03D871FC6C8220030DF49 /* BaseViewController.m */; };
+		88E0D8B51FDB820800C28C59 /* RACMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E0D8B41FDB820800C28C59 /* RACMapViewController.m */; };
+		88E0D8B81FDB85DD00C28C59 /* RACIgnoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E0D8B71FDB85DD00C28C59 /* RACIgnoreViewController.m */; };
+		88E0D8BB1FDBBA3D00C28C59 /* RACConcatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E0D8BA1FDBBA3D00C28C59 /* RACConcatViewController.m */; };
+		88E0D8BE1FDBCB3400C28C59 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E0D8BD1FDBCB3400C28C59 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,14 @@
 		88E03D841FC6BF2D0030DF49 /* RACDefineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACDefineViewController.m; sourceTree = "<group>"; };
 		88E03D861FC6C8220030DF49 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		88E03D871FC6C8220030DF49 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		88E0D8B31FDB820800C28C59 /* RACMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACMapViewController.h; sourceTree = "<group>"; };
+		88E0D8B41FDB820800C28C59 /* RACMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACMapViewController.m; sourceTree = "<group>"; };
+		88E0D8B61FDB85DD00C28C59 /* RACIgnoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACIgnoreViewController.h; sourceTree = "<group>"; };
+		88E0D8B71FDB85DD00C28C59 /* RACIgnoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACIgnoreViewController.m; sourceTree = "<group>"; };
+		88E0D8B91FDBBA3D00C28C59 /* RACConcatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACConcatViewController.h; sourceTree = "<group>"; };
+		88E0D8BA1FDBBA3D00C28C59 /* RACConcatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACConcatViewController.m; sourceTree = "<group>"; };
+		88E0D8BC1FDBCB3400C28C59 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		88E0D8BD1FDBCB3400C28C59 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +137,14 @@
 				888263071FC812FB00F0F8CA /* NetWorkViewController.m */,
 				888262FB1FC7B0B400F0F8CA /* RACSequenceViewController.h */,
 				888262FC1FC7B0B400F0F8CA /* RACSequenceViewController.m */,
+				88E0D8B31FDB820800C28C59 /* RACMapViewController.h */,
+				88E0D8B41FDB820800C28C59 /* RACMapViewController.m */,
+				88E0D8B61FDB85DD00C28C59 /* RACIgnoreViewController.h */,
+				88E0D8B71FDB85DD00C28C59 /* RACIgnoreViewController.m */,
+				88E0D8B91FDBBA3D00C28C59 /* RACConcatViewController.h */,
+				88E0D8BA1FDBBA3D00C28C59 /* RACConcatViewController.m */,
+				88E0D8BC1FDBCB3400C28C59 /* LoginViewController.h */,
+				88E0D8BD1FDBCB3400C28C59 /* LoginViewController.m */,
 				88996EFF1FC67DC3001A39CC /* Main.storyboard */,
 				888263011FC7F44D00F0F8CA /* flags.plist */,
 				88996F021FC67DC3001A39CC /* Assets.xcassets */,
@@ -269,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E0D8B51FDB820800C28C59 /* RACMapViewController.m in Sources */,
 				888262F11FC7AF5600F0F8CA /* RACBindViewController.m in Sources */,
 				888262FA1FC7B0AB00F0F8CA /* RACCommandViewController.m in Sources */,
 				888262F41FC7B08200F0F8CA /* RACSignalViewController.m in Sources */,
@@ -276,11 +297,14 @@
 				888262FD1FC7B0B400F0F8CA /* RACSequenceViewController.m in Sources */,
 				88E03D851FC6BF2D0030DF49 /* RACDefineViewController.m in Sources */,
 				88E03D881FC6C8220030DF49 /* BaseViewController.m in Sources */,
+				88E0D8BE1FDBCB3400C28C59 /* LoginViewController.m in Sources */,
 				888263081FC812FB00F0F8CA /* NetWorkViewController.m in Sources */,
 				88996EFE1FC67DC3001A39CC /* ViewController.m in Sources */,
+				88E0D8BB1FDBBA3D00C28C59 /* RACConcatViewController.m in Sources */,
 				888263051FC80C7900F0F8CA /* RACMulticastConnectionVC.m in Sources */,
 				88996F091FC67DC3001A39CC /* main.m in Sources */,
 				88996EFB1FC67DC3001A39CC /* AppDelegate.m in Sources */,
+				88E0D8B81FDB85DD00C28C59 /* RACIgnoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
+
+/**
+ bind 绑定
+ */
 @interface RACBindViewController :BaseViewController
 
 
