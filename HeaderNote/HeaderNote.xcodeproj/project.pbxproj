@@ -181,13 +181,6 @@
 			path = CoreGraphics;
 			sourceTree = "<group>";
 		};
-		765DA1BC1F26DB3700E8FD50 /* CoreImage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreImage;
-			sourceTree = "<group>";
-		};
 		768CDED61F1DA0CA00ED3F59 = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +209,6 @@
 				76A4DE621F1FA4BA0006B4CA /* Foundation */,
 				768CDF141F1DA0E600ED3F59 /* UIKit */,
 				765DA1BB1F26DB2500E8FD50 /* CoreGraphics */,
-				765DA1BC1F26DB3700E8FD50 /* CoreImage */,
 				764C57E81F2829F200F50C9C /* Category */,
 				764C57EE1F282A6D00F50C9C /* View */,
 				764C57EF1F282A7000F50C9C /* ViewController */,

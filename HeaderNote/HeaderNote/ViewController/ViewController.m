@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CGTranslateView.h"
+#import <pthread.h>
 
 
 @interface ViewController ()
@@ -19,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];    
 
+    
+    pthread_mutex_look
+    
     CGTranslateView *ts = [[CGTranslateView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:ts];
     

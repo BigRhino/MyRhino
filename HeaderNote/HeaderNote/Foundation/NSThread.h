@@ -52,9 +52,10 @@ NSLock
     uint8_t _bytes[44];
 }
 
+//当前线程
 @property (class, readonly, strong) NSThread *currentThread;
 
-//创建并启动一个线程对象,block(线程执行任务内容)
+//创建并启动(不用执行start)一个线程对象,block(线程执行任务内容)
 + (void)detachNewThreadWithBlock:(void (^)(void))block API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0));
 //创建并启动一个线程对象,目标方法(线程执行体) 目标 目标参数(方法接受的参数)
 + (void)detachNewThreadSelector:(SEL)selector toTarget:(id)target withObject:(nullable id)argument;
